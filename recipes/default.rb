@@ -108,7 +108,7 @@ end
 # find nodes to monitor.  Search in all environments if multi_environment_monitoring is enabled
 Chef::Log.info('Beginning search for nodes.  This may take some time depending on your node count')
 nodes = []
-hostgroups = []
+hostgroups = ['all']
 multi_env = node['nagios']['monitored_environments']
 multi_env_search = multi_env.empty? ? '' : ' AND (chef_environment:' + multi_env.join(' OR chef_environment:') + ')'
 
